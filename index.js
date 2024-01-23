@@ -33,6 +33,7 @@ const processImage = async () => {
   try {
     await sharp(inputBuffer)
       .withMetadata({ density: 300 })
+      .heif({ compression: "hevc" })
       .toBuffer();
 
     clearInterval(intervalId);
